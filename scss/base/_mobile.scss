@@ -1,0 +1,43 @@
+@media (max-width: 1199.98px) {
+  .player-controls__volume-control {
+    display: none;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .player-controls__treckTime {
+    padding-left: px-to-rem(140);
+  }
+
+  .player-controls__treckDuration {
+    padding-right: px-to-rem(140);
+  }
+
+  .player-controls__volume-control {
+    display: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .player-controls__treckTime {
+    padding-left: px-to-rem(63);
+  }
+
+  .player-controls__treckDuration {
+    padding-right: px-to-rem(63);
+  }
+
+  .burger__item {
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .player-controls__treckTime {
+    padding-left: clamp(0rem, -0.002rem + 3.48vw, 1.25rem);
+  }
+
+  .player-controls__treckDuration {
+    padding-right: clamp(0rem, -0.002rem + 3.48vw, 1.25rem);
+  }
+}

@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+$base-font-size: 16;
+
+@function strip-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+@function px-to-rem($size, $base: $base-font-size) {
+  $pxUnitless: strip-unit($size);
+  @return #{$pxUnitless / $base}rem;
+}
+
+$background-color: #f4f4fa;
+$background__player-color: #fefefe;
+
+$font-primary: #343434;
+$font-secondary: #757575;
+
+$primary_font: "Roboto", sans-serif;
+
+body {
+  background: $background-color;
+  font-family: $primary_font;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+

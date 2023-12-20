@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="msapplication-navbutton-color" content="#f4f4fa"/>
+    <meta name="theme-color" content="#f4f4fa"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/> <!-- или 'default'-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link
+            rel="shortcut icon"
+            href="./assets/img/title-logo.svg"
+            type="image/x-icon"
+    />
+    <title>Elizar Music</title>
+    <link rel="stylesheet" href="./css/main.css"/>
+</head>
+<body class="body">
+<main class="main">
+    <div class="player container g-0">
+        <div class="player__row row g-0">
+            <div class="col-xxl-6 col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="player__title">Хиты Елизара</div>
+            </div>
+            <div class="col-xxl-6 col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
+                <div class="player__image">
+                    <img src="./assets/img/elizar.gif" alt=""/>
+                </div>
+            </div>
+            <div class="burger">
+                <div class="burger__menubox"></div>
+            </div>
+        </div>
+        <div class="player-controls">
+            <div class="player-controls__title-row row g-0">
+                <div
+                        class="col-xxl-11 col-xl-11 col-lg-11 col-md-11 col-sm-11 col-11"
+                >
+                    <div class="active-treck">
+                        <div class="active-treck__treckName">Мокрые кроссы</div>
+                        <div class="active-treck__authorName">Елизар</div>
+                    </div>
+                </div>
+                <div
+                        class="col-xxl-1 col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 d-flex justify-content-center"
+                >
+                    <div class="player-controls__playListButton">
+                        <button id="js-burger__btn"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="player-controls__treckRange-row row g-0">
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                    <div class="player-controls__treckTime">0:00</div>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                    <div class="player-controls__treckDuration"></div>
+                </div>
+                <div class="col-xxl-12 col-xl-12">
+                    <div class="player-controls__treckTimeInput">
+                        <input type="range" id="js-treck-range" value="0" step="1"/>
+                    </div>
+                </div>
+            </div>
+            <audio src="./assets/audio/Незабудка.mp3" id="audio"></audio>
+            <div class="player-controls__treckBtn-row row g-0">
+                <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
+                    <div class="player-controls__prevTreckButton treck-btn">
+                        <button id="js-prev-btn"></button>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
+                    <div class="player-controls__playPauseButton treck-btn">
+                        <button id="js-play-pause-btn"></button>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
+                    <div class="player-controls__nextTreckButton treck-btn">
+                        <button id="js-next-btn"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="player-controls__volume-control">
+                <div class="volume-image"></div>
+                <input type="range" id="js-volume-controller" max="1" step="0.01" value="0.5">
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+<script src="./script/burger-menu.js"></script>
+<script src="./script/player.js"></script>
+</html>

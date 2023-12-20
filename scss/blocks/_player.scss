@@ -1,0 +1,296 @@
+@keyframes rotateTreckCover {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.player {
+  background: $background__player-color;
+  border-radius: px-to-rem(30);
+  -webkit-box-shadow: 0px -5px 70px 0px rgba(34, 60, 80, 0.6);
+  -moz-box-shadow: 0px -5px 70px 0px rgba(34, 60, 80, 0.6);
+  box-shadow: 0px -5px 70px 0px rgba(34, 60, 80, 0.6);
+
+  &__row {
+    padding: px-to-rem(50) px-to-rem(40);
+    position: relative;
+  }
+
+  &__image {
+    display: flex;
+    justify-content: end;
+
+    img {
+      width: 100%;
+      border-radius: px-to-rem(20);
+
+      @media (max-width: 991.98px) {
+        width: 90%;
+      }
+
+      @media (max-width: 767.98px) {
+        width: 100%;
+        margin-top: px-to-rem(20);
+      }
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font: {
+      size: clamp(1.5rem, 0.301rem + 1.94vw, 3rem);
+      weight: 500;
+    }
+  }
+}
+
+.player-controls {
+  border-radius: px-to-rem(20) px-to-rem(20) px-to-rem(30) px-to-rem(30);
+  background: $background__player-color;
+  -webkit-box-shadow: 0px -5px 24px 0px rgba(34, 60, 80, 0.6);
+  -moz-box-shadow: 0px -5px 24px 0px rgba(34, 60, 80, 0.6);
+  box-shadow: 0px -5px 24px 0px rgba(34, 60, 80, 0.6);
+
+  transition: box-shadow 0.2s;
+
+  position: relative;
+  z-index: 5001;
+
+  &__title-row {
+    padding: px-to-rem(40) px-to-rem(40) px-to-rem(30) px-to-rem(40);
+    align-items: center;
+  }
+
+  &__treckRange-row {
+    padding: 0 px-to-rem(40);
+  }
+
+  &__treckBtn-row {
+    padding: 0 px-to-rem(40);
+  }
+
+  &__playListButton {
+    height: 50%;
+    width: 50%;
+    cursor: pointer;
+    padding: px-to-rem(20) 0;
+    display: flex;
+    justify-content: center;
+
+    button {
+      border: none;
+      background: url(../assets/img/playlist-dots.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      padding: px-to-rem(10) px-to-rem(10);
+      position: relative;
+      z-index: -1;
+      cursor: pointer;
+
+      @media (max-width: 300px) {
+        margin-left: px-to-rem(15);
+      }
+    }
+  }
+
+  &__treckTime {
+    padding-left: px-to-rem(180);
+    font-weight: 500;
+    color: $font-secondary;
+  }
+
+  &__treckDuration {
+    padding-right: px-to-rem(180);
+    text-align: right;
+    font-weight: 500;
+    color: $font-secondary;
+  }
+
+  &__treckTimeInput {
+    display: flex;
+    justify-content: center;
+    padding-top: px-to-rem(10);
+
+    input {
+      width: 70%;
+
+      @media (max-width: 1399.98px) {
+        width: 64%;
+      }
+      @media (max-width: 1199.98px) {
+        width: 58%;
+      }
+      @media (max-width: 991.98px) {
+        width: 54%;
+      }
+
+      @media (max-width: 767.98px) {
+        width: 70%;
+      }
+
+      @media (max-width: 575.98px) {
+        width: 90%;
+      }
+    }
+
+    input[type="range"] {
+      height: px-to-rem(4);
+    }
+  }
+
+  &__treckBtn-row {
+    padding: px-to-rem(30) px-to-rem(40);
+    justify-content: center;
+
+    .treck-btn {
+      display: flex;
+      justify-content: center;
+
+      button {
+        padding: px-to-rem(20) px-to-rem(20);
+        border: none;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+
+        @media (max-width: 575.98px) {
+          padding: px-to-rem(15) px-to-rem(15);
+        }
+
+        @media (max-width: 300px) {
+          padding: px-to-rem(12) px-to-rem(12);
+        }
+      }
+    }
+  }
+
+  &__prevTreckButton {
+    button {
+      background: url(../assets/img/prev-next.svg);
+    }
+
+    @media (max-width: 575.98px) {
+      justify-content: start !important;
+    }
+  }
+
+  &__playPauseButton {
+    button {
+      background: url(../assets/img/play.svg);
+    }
+  }
+
+  &__nextTreckButton {
+    button {
+      background: url(../assets/img/prev-next.svg);
+      transform: scale(-1, -1);
+    }
+
+    @media (max-width: 575.98px) {
+      justify-content: end !important;
+    }
+  }
+
+  &__volume-control {
+    position: absolute;
+    right: px-to-rem(-45);
+    bottom: px-to-rem(85);
+    transform: rotate(270deg);
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+
+    .volume-image {
+      padding: px-to-rem(15) px-to-rem(15);
+      transform: rotate(90deg);
+      background-repeat: no-repeat;
+      background-size: contain !important;
+      background-position: center;
+      background: url(../assets/img/mute100.svg);
+    }
+
+    input[type="range"] {
+      height: px-to-rem(4);
+    }
+  }
+}
+
+.open {
+  -webkit-box-shadow: 8px 18px 17px 0 rgba(34, 60, 80, 0.6);
+  -moz-box-shadow: 8px 18px 17px 0 rgba(34, 60, 80, 0.6);
+  box-shadow: 8px 18px 17px 0 rgba(34, 60, 80, 0.6);
+  transition: 0.2s;
+}
+
+.active-treck {
+  text-transform: uppercase;
+  font: {
+    size: clamp(1.3rem, 0.301rem + 1.94vw, 2rem);
+    weight: 500;
+  }
+
+  &__treckName {
+    color: $font-primary;
+    padding-bottom: px-to-rem(10);
+  }
+
+  &__authorName {
+    color: $font-secondary;
+    font-size: clamp(1rem, 0.65rem + 0.97vw, 1.5rem);
+  }
+}
+
+.burger__menubox {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.burger__item {
+  padding: px-to-rem(20) px-to-rem(0);
+  display: flex;
+  align-items: center;
+  gap: px-to-rem(20);
+  font-size: clamp(1.2rem, 0.65rem + 0.97vw, 2rem);
+  font-weight: 500;
+  flex: 0 0 50%;
+  cursor: pointer;
+
+  .treck-cover {
+    width: 15%;
+    border-radius: 50%;
+
+    @media (max-width: 575.98px) {
+      width: 20%;
+    }
+  }
+
+  .new-treck {
+    color: #7b7b7b;
+    text-transform: uppercase;
+    font-size: calc(100% - (px-to-rem(5)));
+  }
+
+  &:hover > .treck-name {
+    opacity: 0.85;
+    transform: scale(1.03);
+    transition: 0.03s;
+  }
+
+  &:hover {
+    transform: scale(1.01);
+    transition: 0.03s;
+  }
+
+  &:hover > .treck-cover {
+    animation: rotateTreckCover linear 7s infinite;
+  }
+}
+
+.treck-cover-anim {
+  animation: rotateTreckCover linear 7s infinite;
+}
